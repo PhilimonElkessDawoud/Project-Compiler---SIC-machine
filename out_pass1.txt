@@ -1,0 +1,22 @@
+      PROG1   START  2000
+2000          FLOAT
+2001          LDA    GAMMA
+2004          STA    INDEX
+2007          SIO
+2008          TIO
+2009  LOOP    LDX    INDEX
+200c          LDA    GAMMA
+200f          STA    ALPHA,X
+2012          LDA    INDEX
+2015          ADD    #3
+2018          STA    INDEX
+201b          COMP   K100
+201e          TIX    TWENTY
+2021          JLT    LOOP
+2024          FIX
+2025  INDEX   RESB   1
+2026  ALPHA   RESW   100
+2152  GAMMA   BYTE   X'0502'
+2154  K100    WORD   100
+2157  TWENTY  WORD   20
+215a          END    2000

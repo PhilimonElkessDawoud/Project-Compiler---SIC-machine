@@ -1,0 +1,22 @@
+PROG1   START  2000
+        FLOAT           C0
+        LDA    GAMMA    002152
+        STA    INDEX    0C2025
+        SIO             F0
+        TIO             F8
+LOOP    LDX    INDEX    042025
+        LDA    GAMMA    002152
+        STA    ALPHA,X  0CA026
+        LDA    INDEX    002025
+        ADD    #3       190003
+        STA    INDEX    0C2025
+        COMP   K100     282154
+        TIX    TWENTY   2C2157
+        JLT    LOOP     382009
+        FIX             C4
+INDEX   RESB   1
+ALPHA   RESW   100
+GAMMA   BYTE   X'0502'  0502
+K100    WORD   100      000064
+TWENTY  WORD   20       000014
+        END    2000

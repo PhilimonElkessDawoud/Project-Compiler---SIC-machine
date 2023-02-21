@@ -1,0 +1,22 @@
+PROG1   START  2000
+        FLOAT
+        LDA    GAMMA
+        STA    INDEX
+        SIO
+        TIO
+LOOP    LDX    INDEX
+        LDA    GAMMA
+        STA    ALPHA,X
+        LDA    INDEX
+        ADD    #3
+        STA    INDEX
+        COMP   K100
+        TIX    TWENTY
+        JLT    LOOP
+        FIX
+INDEX   RESB   1
+ALPHA   RESW   100
+GAMMA   BYTE   X'0502'
+K100    WORD   100
+TWENTY  WORD   20
+        END    2000
